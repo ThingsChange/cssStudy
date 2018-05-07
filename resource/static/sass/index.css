@@ -1,0 +1,66 @@
+*{
+    margin:0;
+    padding: 0;
+}
+.content{
+    height: 1000px;
+    width: 1000px;
+    /*background:url("../image/poor.jpg" )  no-repeat fixed  50px 100px;*/
+    background:url("../image/poor.jpg" )  no-repeat  fixed 250px 271px;
+    /*background-repeat: repeat-x;*/
+}
+.content p:first-child{
+    /*text-indent:-2em;*/
+    /*padding-left: 2em;*/
+    text-align:center;
+}
+.content p{
+    /*text-indent:-2em;*/
+    /*padding-left: 2em;*/
+    text-align:right;
+}
+ .content a{
+     text-decoration:none
+ }
+.content a:link{
+    color:#F00;
+}
+
+.content a:visited{
+    color:#00FF00
+}
+.content a:hover{
+    color:#FF00FF
+}
+.content a:active {
+    color:#0000FF;
+}
+ul {
+    border:5px solid ;
+    padding:5px;
+    list-style-type : square;
+    background-color: aqua;
+}
+table{
+    width:100%;
+    background-color: #00FF00;
+
+}
+table,th,td {
+    border:1px solid #ccc;
+    text-align: center;
+    border-collapse:collapse;
+}
+th{
+    height:50px;
+    background-color: #F0F;
+}
+td{
+    height:80px;
+    vertical-align:center;
+    border:5px dotted ;
+    color:red;
+}
+tr:first-child{
+    border:4px solid transparent;
+}

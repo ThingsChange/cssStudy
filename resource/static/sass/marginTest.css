@@ -1,0 +1,55 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    height:1200px;
+    width: 90%;
+    position:absolute;
+    /*background-color: aqua;*/
+    /*padding-top: 20px;*/
+}
+.content{
+    height: 40px;
+    width: 30%;
+    margin: 100px auto;
+    background-color: cadetblue;
+}
+.content p{
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+
+}
+.content p span{
+    padding-top: 80px;
+}
+.absoluteDiv{
+    position: absolute;
+    top:20px;
+    left:50px;
+}
+img.abTop{
+    position:absolute;
+    top:5%; //绝对定位的元素的位置相对于最近的已定位祖先元素，如果元素没有已定位的祖先元素，那么它的位置相对于最初的包含块。
+}
+img.abLeft{
+    position:absolute;
+    left:50%;
+    z-index:-1;
+}
+div.moreLine,.moreLineHide{
+    background-color: antiquewhite;
+    width: 200px;
+    height: 150px;
+    overflow:scroll;
+}
+div.moreLineHide{
+    overflow:hidden;
+}
+div.relativeDiv{
+    position:relative;
+    top: 20px;
+    left: 25px;
+    margin-bottom: 20px;
+}

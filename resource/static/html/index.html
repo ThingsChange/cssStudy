@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../sass/index.css" type="text/css">
+</head>
+<body>
+        <header>我是頂部</header>
+        <div class="content">
+            <p>内容的第一行啊</p>
+            <p>内容的第二行啊</p>
+            <p><a href="#">空的</a></p>
+            <p><a href="www.baidu.com">百度</a></p>
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+            </ul>
+            <table>
+                <th>a</th>
+                <th>b</th>
+                <th>c</th>
+                <th>d</th>
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>边框的默认背景色是当前元素的前景色</td>
+                </tr>
+            </table>
+            </div>
+        <footer>我是尾部</footer>
+</body>
+</html>
+<script>
+    function getNode(a, listNode) {
+        console.log(listNode.next)
+        if (listNode.next === null) {
+            a.push(listNode.val);
+            return a
+        }
+        a.push(listNode.val);
+        getNode(a, listNode.next);
+        return a
+    }
+    var l1={
+        val: 2,
+        next: { val: 4,
+            next: { val: 3,
+                next: null
+            }
+        }
+    }
+    getNode([],l1)
+
+
+
+    var addTwoNumbers = function(l1, l2) {
+        var a1=[2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,9];
+        var a2=[5,6,4,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,9,9,9,9];
+        let tem1=getNode([],l1);
+        let tem2=getNode([],l2)
+
+        let t1=tem1.reverse();
+        let t2=tem2.reverse();
+        let maxLength=Math.max(t1.length,t2.length);
+        let tem=0,temLast=0;
+        let ra=[];
+        if(maxLength===1){
+            return (''+(Number(t1.toString())+Number(t2.toString()))).split('').reverse().map(v=> +v);
+        }
+        t1.fill(0,0,maxLength-t1.length)
+        t2.fill(0,0,maxLength-t2.length)
+        for(let i =0;i<maxLength;i++){
+            let tt1=maxLength[i]?maxLength[i]:0;
+            let tt2=maxLength[i]?maxLength[i]:0;
+            let ttNow=0;
+            ttNow=Math.floor((tt1+tt2+tem)%10);
+            if(tt1+tt2>9){
+                tem=Math.floor((tt1+tt2+tem)/10);
+            }
+            ra.unshift(ttNow);
+        }
+        return ra.reverse();
+    };
+
+function isDrive(times){
+    let  oddA=[],evenA=[];
+    for (let i=0;i<times;i++){
+       let temp= Math.ceil(Math.random()*100)
+        temp%2===0?evenA.push(temp):oddA.push(temp);
+    }
+    console.group('下面是系统为您投票 '+ times +'次的结果')
+    console.log('开车回家：'+ oddA.length);
+    console.log('火车回家：'+ evenA.length);
+    if(oddA.length>evenA.length){
+        console.log('开车回家');
+    }else if(oddA.length<evenA.length){
+        console.log('火车出行');
+    }else{
+        console.log('太纠结了');
+    }
+}
+isDrive(10000);
+
+
+
+
+
+
+</script>
